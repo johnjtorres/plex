@@ -6,7 +6,7 @@ SERVICENAME=$(basename $(pwd))
 
 echo "Creating systemd service... /etc/systemd/system/${SERVICENAME}.service"
 # Create systemd service file
-sudo cat >/etc/systemd/system/$SERVICENAME.service <<EOF
+sudo dd of=/etc/systemd/system/$SERVICENAME.service <<EOF
 [Unit]
 Description=$SERVICENAME
 Requires=docker.service
