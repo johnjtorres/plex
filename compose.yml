@@ -1,0 +1,11 @@
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /media/dataone/config:/config
+      - /media/datatwo/transcode:/transcode
+      - /media/dataone/plexlibrary:/dataone
+      - /media/datatwo/plexlibrary:/datatwo
